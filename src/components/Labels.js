@@ -12,11 +12,16 @@ export default function Labels() {
             type="checkbox"
             checked={checked}
             onChange={() =>
-              updateLabel({ label: lbl, checked: !checked })
+              updateLabel({ label: lbl, checked: !checked }) // 更新標籤的選擇狀態
             }
-            className={`form-checkbox h-5 w-5 text-${lbl}-400 rounded focus:ring-0 cursor-pointer`}
+            style={{
+              color: lbl.includes("#") ? lbl : undefined, // 如果標籤是自定義顏色，使用內聯樣式顯示顏色
+            }}
+            className={`form-checkbox h-5 w-5 rounded focus:ring-0 cursor-pointer ${
+              !lbl.includes("#") ? `text-${lbl}-400` : "" // 如果標籤不是自定義顏色，使用 Tailwind 顏色類別
+            }`}
           />
-          <span className="ml-2 text-gray-700 capitalize">{lbl}</span>
+          <span className="ml-2 text-gray-700 capitalize">{lbl}</span> {/* 顯示標籤名稱 */}
         </label>
       ))}
     </React.Fragment>

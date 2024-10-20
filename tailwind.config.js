@@ -5,6 +5,7 @@ const labelsClasses = [
   "blue",
   "red",
   "purple",
+
 ];
 
 module.exports = {
