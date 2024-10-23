@@ -18,6 +18,7 @@ function App() {
       <Routes>
         {/* 主頁面設置為登入頁面 */}
         <Route path="/" element={<Login />} />
+        <Route path="/Login" element={<Login />} />
 
         {/* 日曆頁面 */}
         <Route path="/calendar" element={<Calendar />} />
