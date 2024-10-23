@@ -1,0 +1,211 @@
+/* 背景設定 - 固定背景色 */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f6f4; /* 使用你提供的淺灰色作為背景 */
+}
+
+.background {
+    min-height: 100vh; /* 使用視窗高度填滿 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 登入表單容器 */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 320px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #27374d; /* 使用深綠色 */
+    font-size: 24px;
+}
+
+/* 輸入欄位 */
+.input-field {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-field label {
+    font-size: 16px;
+    color: #27374d; /* 深綠色 */
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* 修改輸入欄位，應用深色漸變文字效果 */
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    
+    /* 深色文字漸變效果 */
+    background: linear-gradient(45deg, #27374d, #576f72, #2b5b84); /* 深綠到深藍漸變 */
+    background-clip: text;
+    -webkit-background-clip: text; /* 適用於 Webkit 瀏覽器 */
+    color: transparent; /* 將文字設為透明，顯示漸變背景 */
+    transition: border-color 0.3s;
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: #576f72; /* focus 時的邊框顏色 */
+}
+
+/* 登入按鈕 - 漸變色 */
+@keyframes buttonGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #f8d082, #ca8787); /* 漸變：黃到粉 */
+    background-size: 200% 200%; /* 擴大背景區域以實現平滑過渡 */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    animation: buttonGradient 5s ease infinite; /* 5 秒的無限漸變循環 */
+    transition: transform 0.3s;
+}
+
+/* 按鈕 hover 動態效果 */
+.login-btn:hover {
+    transform: scale(1.05); /* 懸停時放大 */
+}
+
+/* 註冊連結 */
+.signup-link {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #576f72; /* 綠色 */
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* 社交登入按鈕 */
+.social-login {
+    margin-top: 30px;
+}
+
+.social-login p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Google 按鈕的漸變效果 */
+@keyframes googleGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.google {
+    width: 100%; /* 確保按鈕寬度填滿容器 */
+    padding: 12px;
+    background: linear-gradient(45deg, #dd4b39, #ff6f61); /* 漸變：Google 紅到橙 */
+    background-size: 200% 200%; /* 擴大背景範圍 */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    animation: googleGradient 5s ease infinite; /* 5 秒的無限漸變循環 */
+    transition: transform 0.3s, background 0.3s ease; /* 添加背景漸變過渡 */
+    display: flex; /* 使用 flex 來對齊圖示與文字 */
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    margin-bottom: 10px;
+}
+
+.google:hover {
+    transform: scale(1.05); /* 懸停時放大 */
+}
+
+/* Facebook 按鈕的漸變效果 */
+.facebook {
+    width: 100%; /* 確保按鈕寬度填滿容器 */
+    padding: 12px;
+    background: linear-gradient(45deg, #3b5998, #4a69ad); /* 漸變：深藍到亮藍 */
+    background-size: 200% 200%; /* 擴大背景範圍 */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    animation: facebookGradient 5s ease infinite; /* 5 秒的無限漸變循環 */
+    transition: transform 0.3s, background 0.3s ease; /* 添加背景漸變過渡 */
+    display: flex; /* 使用 flex 來對齊圖示與文字 */
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    margin-bottom: 10px;
+}
+
+.facebook:hover {
+    transform: scale(1.05); /* 懸停時放大 */
+}
+
+/* 圖示與文字之間的間距 */
+.social-btn img {
+    margin-right: 8px;
+    width: 20px; /* 調整圖示大小 */
+    height: 20px; /* 調整圖示大小 */
+}
+
+/* 通用圖示樣式 */
+.social-login {
+    display: flex; /* 使用 flexbox 使圖示水平排列 */
+    justify-content: center; /* 中央對齊 */
+    margin-top: 10px; /* 圖示區域的上方間距 */
+}
+
+.social-icon {
+    width: 50px; /* 調整圖示大小 */
+    height: 50px; /* 調整圖示大小 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px; /* 左右圖示之間的間距 */
+    transition: transform 0.3s; /* 加入過渡效果 */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* 懸停時放大 */
+}
+
+/* 圖示樣式 */
+.social-icon img {
+    width: 100%; /* 圖示填滿容器 */
+    height: auto; /* 自動調整高度 */
+}
+

@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+.header {
+    margin-bottom: 10px; /* 上方標題與聊天室之間的距離 */
+}
+
+.top {
+    background-color: #27374d;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.menu {
+    font-size: 25px;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end; 
+    font-family: "Poppins";
+    font-weight: normal;
+    position: relative;
+    margin: 10px;
+}
+
+.menu__item {
+    cursor: pointer;
+    transition: 0.5s;
+    margin-left: 0px;
+    padding-right: 50px;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.menu__item::after {
+    content: attr(data-content);
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+}
+
+.menu__item:hover {
+    transform: translate(0, -100%);
+}
+
+/* 新增番茄鐘按鈕的樣式 */
+.menu__item[data-content="番茄鐘"] {
+    padding-right: 50px;
+}
+
+/* 聊天視窗的整體樣式調整 */
+.chat-container {
+    width: 100%; 
+    height: calc(100vh - 80px); 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative; 
+    box-sizing: border-box; 
+    padding: 20px; 
+}
+
+/* 預設問題框架 */
+.preset-questions {
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+    border-bottom: 1px solid #ddd;
+    border-radius: 15px; 
+    background-color: #d3e8e6; 
+    margin: 50px 500px -40px; 
+    box-sizing: border-box;
+}
+
+.preset-question {
+    margin: 10px 10px;
+    padding: 10px;
+    border: none;
+    background-color: #f8f6f4;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.preset-question:hover {
+    background-color: #e0dedc;
+}
+
+.chat-window {
+    flex: 1; 
+    padding: 20px;
+    overflow-y: auto; 
+    border-radius: 15px 15px 0 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent; 
+    box-sizing: border-box; 
+}
+
+.chat-window::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.chat-window::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
+    border: 2px solid transparent; 
+    background-clip: content-box; 
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    max-width: 60%;
+}
+
+.message.user {
+    justify-content: flex-end; 
+    margin-right: 470px;
+    margin-left: auto; 
+}
+
+.message.friend .text {
+    background-color: #d3e8e6; 
+}
+
+.message.friend {
+    justify-content: flex-start; 
+    margin-left: 470px;
+    margin-right: auto; 
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.message.user .avatar {
+    order: 2; 
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.message .text {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f1f0f0; 
+    color: #000;
+    word-wrap: break-word; 
+}
+
+.message.user .text {
+    background-color: #007bff;
+    color: white;
+    border-radius: 15px;
+}
+
+.message.friend .text {
+    background-color: #d3e8e6;
+    border-radius: 20px 20px 20px 0; 
+}
+
+.chatinput-area {
+    display: flex;
+    padding: 10px;
+    background-color: #d3e8e6;
+    border-top: 0px solid #d3e8e6;
+    border-radius: 40px;
+    margin: 50px 500px 5px;
+}
+
+.chatinput[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #d3e8e6;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: #d3e8e6;
+}
+
+#voice-button,
+#send-button {
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#voice-button img,
+#send-button img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}

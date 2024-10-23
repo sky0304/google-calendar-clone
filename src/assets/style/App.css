@@ -1,0 +1,78 @@
+/* 整個內容 */
+.pomodoro-timer {
+  font-family: Arial, sans-serif;
+  position: fixed; /* 固定位置 */
+  width: 100%; /* 滿版寬度 */
+  height: 100%; /* 滿版高度 */
+  background-color: #f9f9f9;
+}
+
+.top1 {
+  display: flex; /* 使用彈性布局 */
+  align-items: center; /* 垂直居中對齊內容 */
+  justify-content: space-between;
+  background-color: #27374d;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+
+}
+.images {
+  display: flex;
+  gap: 30px; /* 控制圖片之間的間距 */
+  margin-left: 40px;
+  align-items: center; /* 使圖標垂直居中 */
+  height: 100%; /* 讓這個區域的高度和父元素相同 */
+}
+
+.images img {
+  width: 30px; /* 設置圖片寬度 */
+  height: 30px; /* 設置圖片高度 */
+  filter: brightness(0) invert(1); /* 將顏色設為白色 */
+  vertical-align: middle; /* 垂直居中對齊 */
+  margin: 0; /* 移除外邊距 */
+  padding: 0; /* 移除內邊距 */
+}
+
+.timer-circle {
+  width: 200px;
+  height: 200px;
+  background-color: #8b0000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 48px;
+  margin: 10% auto 5% auto;
+}
+
+.controls{
+  text-align: center;
+}
+
+.controls button {
+  font-size: 24px;
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.pomodoro-count {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.tomato-filled, .tomato-empty {
+  font-size: 32px;
+  margin: 0 5px;
+}
+
+.tomato-filled {
+  color: red;
+}
+
+.tomato-empty {
+  color: lightgray;
+}

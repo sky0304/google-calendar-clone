@@ -1,0 +1,158 @@
+.activity-wrapper .header {
+  margin-bottom: 20px; /* 上方標題與聊天室之間的距離 */
+}
+
+.activity-wrapper .top {
+  background-color: #27374d;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.activity-wrapper .menu {
+  font-size: 25px;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end; 
+  font-family: "Poppins";
+  font-weight: normal;
+  position: relative;
+  margin: 10px;
+}
+
+.activity-wrapper .menu__item {
+  cursor: pointer;
+  transition: 0.5s;
+  margin-left: 0px;
+  padding-right: 50px;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.activity-wrapper .menu__item::after {
+  content: attr(data-content);
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+}
+
+.activity-wrapper .menu__item:hover {
+  transform: translate(0, -100%);
+}
+
+/* 新增番茄鐘按鈕的樣式 */
+.activity-wrapper .menu__item[data-content="番茄鐘"] {
+  padding-right: 50px;
+}
+
+.activity-wrapper .container1 {
+  position: relative;
+  width: 100%; /* 確保設置適當的寬度 */
+  max-width: 900px; /* 可選：設置最大寬度以限制容器的大小 */
+  height: 500px;
+  background-image: url('../images/poster.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 30px auto; /* 上下間距30px，左右自動居中 */
+}
+
+.activity-wrapper .suggestion-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  z-index: 30; /* 設置 z-index 為 30，確保比 SidebarDrawer（z-50）低 */
+}
+
+
+.activity-wrapper .suggestion-box h2 {
+  margin: 0;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.activity-wrapper .heart-icon {
+  font-size: 20px;
+  color: #ff0000;
+}
+
+.activity-wrapper .dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.activity-wrapper .dot {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.activity-wrapper .dot.active {
+  background-color: #717171;
+}
+
+.activity-wrapper .activity-category {
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  margin: 30px auto;
+}
+
+.activity-wrapper .activity-category h2 {
+  margin: 0;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.activity-wrapper .activity-category ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.activity-wrapper .activity-category li {
+  width: calc(33% - 20px);
+  text-align: center;
+}
+
+.activity-wrapper .activity-category li img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.activity-wrapper .activity-category li span {
+  display: block;
+  font-size: 20px;
+}

@@ -9,7 +9,7 @@ const labelsClasses = [
 ];
 
 module.exports = {
-  purge: {
+  content: {
     content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
     //Because we made a dynamic class with the label we need to add those clases
     // to the safe list so the purge does not remove that
@@ -19,7 +19,7 @@ module.exports = {
       ...labelsClasses.map((lbl) => `text-${lbl}-400`)
     ],
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {

@@ -1,0 +1,117 @@
+/* src/assets/style/PomodoroStats.css */
+
+.data-statistics {
+  margin: auto; /* 讓內容居中 */
+  text-align: center;
+  width: 100%; /* 滿版寬度 */
+  height: 100%; /* 滿版高度 */
+  font-family: Arial, sans-serif;
+}
+
+.data-statistics h3 {
+  background-color: #d3e8e6;
+  color: #4A4A4A;
+  margin-top: 0%;
+  font-size: 32px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 2%;
+}
+
+.pomodoro-counts {
+  display: flex;
+  justify-content: space-between; /* 元素間的間距 */
+  width: 60%; /* 將寬度設為自動以適應內容 */
+  margin: 0 auto; /* 將容器本身水平置中 */
+  margin-bottom: 50px;
+  background-color: #e4bfbf;
+  border-radius: 10px;
+}
+
+.focus-time {
+  display: flex;
+  justify-content: space-between; /* 元素間的間距 */
+  width: 60%; /* 將寬度設為自動以適應內容 */
+  margin: 0 auto; /* 將容器本身水平置中 */
+  margin-bottom: 50px;
+  background-color: #e4bfbf;
+  border-radius: 10px;
+}
+
+.pomodoro-item1, .pomodoro-item2, .focus-item1, .focus-item2 {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.pomodoro-item p, .focus-item p {
+  font-size: 2rem;
+  color: #666;
+}
+
+.pomodoro-item1 h1, .focus-item1 h1, .pomodoro-item2 h1, .focus-item2 h1 {
+  font-size: 2rem;
+  color: #87a;
+  background-color: #f9f9f9;
+}
+
+.time-chart {
+  background-color: #e4bfbf;
+  padding: 20px;
+  border-radius: 10px;
+  width: 57%;
+  margin: auto;
+  margin-bottom: 3%;
+}
+
+.time-chart p {
+  text-align: left;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.time-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.time-filter button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #eaeaea;
+  color: #555;
+  margin: 0 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.time-filter button.selected {
+  background-color: #ffebcd;
+  color: black;
+}
+
+.chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  height: 100px;
+}
+
+.bar {
+  width: 4%;
+  height: 20px;
+  background-color: #ccc;
+  transition: all 0.3s;
+}
+
+.active-bar {
+  height: 40px;
+  background-color: #87a;
+}
+
+@media (max-width: 400px) {
+  .data-statistics {
+    width: 90%;
+  }
+}

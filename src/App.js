@@ -1,31 +1,49 @@
-import React, { useState, useContext, useEffect } from "react";
-import "./App.css";
-import { getMonth } from "./util";
-import CalendarHeader from "./components/CalendarHeader";
-import Sidebar from "./components/Sidebar";
-import Month from "./components/Month";
-import GlobalContext from "./context/GlobalContext";
-import EventModal from "./components/EventModal";
+// src/App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Calendar from "./pages/Calendar";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ChatComponent from "./pages/ChatComponent";
+import Activity from "./pages/Activity";
+import ActivityList from "./pages/ActivityList";
+import PomodoroTimer from "./pages/PomodoroTimer";
+import PomodoroStats from "./pages/PomodoroStats"; // 引入 PomodoroStats 頁面
+import Potatoset from "./pages/Potatoset"; // 引入 Potatoset 頁面
+
 function App() {
-  const [currenMonth, setCurrentMonth] = useState(getMonth());
-  const { monthIndex, showEventModal } = useContext(GlobalContext);
-
-  useEffect(() => {
-    setCurrentMonth(getMonth(monthIndex));
-  }, [monthIndex]);
-
   return (
-    <React.Fragment>
-      {showEventModal && <EventModal />}
+    <Router>
+      {/* 定義所有的路由 */}
+      <Routes>
+        {/* 主頁面設置為登入頁面 */}
+        <Route path="/" element={<Login />} />
 
-      <div className="h-screen flex flex-col">
-        <CalendarHeader />
-        <div className="flex flex-1">
-          <Sidebar />
-          <Month month={currenMonth} />
-        </div>
-      </div>
-    </React.Fragment>
+        {/* 日曆頁面 */}
+        <Route path="/calendar" element={<Calendar />} />
+
+        {/* 註冊頁面 */}
+        <Route path="/Register" element={<Register />} />
+
+        {/* 聊天助手頁面 */}
+        <Route path="/chat" element={<ChatComponent />} />
+
+        {/* 活動頁面 */}
+        <Route path="/activity" element={<Activity />} />
+
+        {/* 活動列表頁面，包含特定類別 */}
+        <Route path="/activity/:category" element={<ActivityList />} />
+
+        {/* 番茄鐘計時器頁面 */}
+        <Route path="/pomodoro" element={<PomodoroTimer />} />
+
+        {/* 番茄鐘統計頁面 */}
+        <Route path="/PomodoroStats" element={<PomodoroStats />} />
+
+        {/* 番茄鐘設定頁面 */}
+        <Route path="/Potatoset" element={<Potatoset />} /> {/* 添加 Potatoset 頁面 */}
+      </Routes>
+    </Router>
   );
 }
 
